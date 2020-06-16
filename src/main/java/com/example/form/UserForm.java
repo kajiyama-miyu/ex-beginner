@@ -1,10 +1,18 @@
 package com.example.form;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class UserForm {
 	
+	@NotBlank(message = "名前は必須です。")
 	private String name;
+	@NotNull(message = "年齢は必須です。")
 	private Integer age;
+	@Size(min = 1, max = 120, message = "１文字以上１２０文字以下で記入しなさい。")
 	private String comment;
+	
 	
 	public String getName() {
 		return name;
