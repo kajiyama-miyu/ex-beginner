@@ -5,9 +5,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-検索結果
+検索結果<br>
 <span th:each="members : ${member}">
-<span th:text="${members}"></span>
+<span th:text="${members.name}"></span><br>
 </span>
 </body>
 </html>
