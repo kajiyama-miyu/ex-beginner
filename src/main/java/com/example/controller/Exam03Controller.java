@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.text.NumberFormat;
+
 import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +23,12 @@ public class Exam03Controller {
 	@RequestMapping("/calc")
 	public String calc(Integer price1, Integer price2, Integer price3) {
 		int price = price1+price2+price3;
-		application.setAttribute("price", price);
+		NumberFormat newPrice = NumberFormat.getNumberInstance();
+		application.setAttribute("price", newPrice.format(price));
 		
 		int totalPrice =(int)(price*1.1);
-		application.setAttribute("totalPrice", totalPrice);
+		NumberFormat newTotalPrice = NumberFormat.getNumberInstance();
+		application.setAttribute("totalPrice", newTotalPrice.format(totalPrice));
 		
 		return "exam03-result";
 	}
