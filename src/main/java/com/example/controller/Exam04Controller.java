@@ -2,6 +2,8 @@ package com.example.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,8 +25,16 @@ public class Exam04Controller {
 	}
 	
 	@RequestMapping("/input-user")
-		public String inputUser(UserForm userForm, Model model) {
-			User user = new User();
+		public String inputUser(@Validated UserForm userForm, BindingResult result, Model model) {
+			
+		if(result.hasErrors()) {
+			
+			return index();
+			
+		}
+		
+		
+		    User user = new User();
 			user.setName(userForm.getName());
 			user.setAge(userForm.getAge());
 			user.setComment(userForm.getComment());
