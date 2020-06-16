@@ -6,9 +6,15 @@
 </head>
 <body>
 <form th:action="@{/exam04/input-user}" method="post" th:object="${userForm}">
+<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red">
 名前：<input type="text" name="name" th:field="*{name}"><br>
+</div>
+<div th:if="${#fields.hasErrors('age')}" th:errors="*{age}" style="color: red">
 年齢：<input type="text" name="age" th:field="*{age}"><br>
+</div>
+<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}" style="color: red">
 コメント：<textarea name="comment" rows="5" cols="50" th:field="*{comment}"></textarea><br>
+</div>
 <button>登録</button>
 </form>
 </body>
