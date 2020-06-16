@@ -31,6 +31,6 @@ public class Exam02Controller {
 	
 	@RequestMapping("/calc2")
 	public String calc2() {
-		return "exam02_result02";
+		return "exam02-result02";
 	}
 }
