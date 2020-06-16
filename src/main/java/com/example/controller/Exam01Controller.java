@@ -10,7 +10,7 @@ public class Exam01Controller {
 
 	@RequestMapping("")
 	public String index() {
-		return "exqm01";
+		return "exam01";
 	}
 	
 	@RequestMapping("/result")
