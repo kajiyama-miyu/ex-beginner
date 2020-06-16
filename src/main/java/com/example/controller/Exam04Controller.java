@@ -9,7 +9,7 @@ import com.example.domain.User;
 import com.example.form.UserForm;
 
 @Controller
-@RequestMapping("exam04")
+@RequestMapping("/exam04")
 public class Exam04Controller {
 
 	@ModelAttribute
@@ -31,7 +31,7 @@ public class Exam04Controller {
 			
 			model.addAttribute("user", user);
 			
-			return "exam04-result";
+			return "exam04_result";
 		}
 	}
 
