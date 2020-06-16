@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.domain.Member;
 import com.example.repository.MemberRepository;
 
 @Service
+@Transactional
 public class MemberService {
 
 	
@@ -16,7 +18,8 @@ public class MemberService {
 	private MemberRepository repository;
 	
 	
-	List<Member> findByName(String name){
+
+	public List<Member> findByName(String name){
 		return repository.findByName(name);
 	}
 }
