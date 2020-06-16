@@ -7,6 +7,17 @@ public class Member {
 	public String getName() {
 		return name;
 	}
+	
+	
+	
+
+	@Override
+	public String toString() {
+		return "Member [name=" + name + "]";
+	}
+
+
+
 
 	public void setName(String name) {
 		this.name = name;
